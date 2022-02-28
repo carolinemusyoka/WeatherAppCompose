@@ -10,6 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.carolmusyoka.weatherappcompose.ui.screens.WeatherMain
+import com.carolmusyoka.weatherappcompose.ui.screens.WeatherScreen
 import com.carolmusyoka.weatherappcompose.ui.theme.WeatherAppComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,27 +19,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WeatherAppComposeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+               WeatherApp()
             }
         }
     }
 }
-
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun WeatherApp() {
+    WeatherScreen()
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     WeatherAppComposeTheme {
-        Greeting("Android")
+       WeatherApp()
     }
 }
